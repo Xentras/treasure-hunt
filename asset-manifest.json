@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/treasure-hunt/static/js/main.79c3d31d.js",
+    "main.js": "/treasure-hunt/static/js/main.17007039.js",
     "index.html": "/treasure-hunt/index.html",
-    "main.79c3d31d.js.map": "/treasure-hunt/static/js/main.79c3d31d.js.map"
+    "main.17007039.js.map": "/treasure-hunt/static/js/main.17007039.js.map"
   },
   "entrypoints": [
-    "static/js/main.79c3d31d.js"
+    "static/js/main.17007039.js"
   ]
 }
