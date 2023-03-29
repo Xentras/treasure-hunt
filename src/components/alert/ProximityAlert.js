@@ -11,6 +11,23 @@ function ProximityAlert(props) {
     const [inRange, setInRange] = useState(false)
     const [longitude, setLongitude] = useState()
 
+    function distance(coords1, coords2) {
+        const { lat: lat1, lon: lon1 } = coords1;
+        const { lat: lat2, lon: lon2 } = coords2;
+        const degToRad = x => x * Math.PI / 180;
+        const R = 6371000;
+        const halfDLat = degToRad(lat2 - lat1) / 2;  
+        const halfDLon = degToRad(lon2 - lon1) / 2;  
+        const a = Math.sin(halfDLat) * Math.sin(halfDLat) + 
+                  Math.cos(degToRad(lat1)) * Math.cos(degToRad(lat2)) * 
+                  Math.sin(halfDLon) * Math.sin(halfDLon);  
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)); 
+        return R * c; 
+      }
+      
+    const paris = { lat: 48.864716, lon: 2.349014 };
+    const newYork = { lat: 40.730610, lon: -73.935242 };
+
     useEffect(() => {
         setLongitude(props.location.longitude)
         function updateLocation() {
@@ -26,31 +43,10 @@ function ProximityAlert(props) {
         <Container>
             <p>Long: {longitude}</p>
             <p>Yeah?</p>
+            <p>distance test: {distance(paris, newYork)} meters</p>
             {inRange && (
                 <p>YES</p>
             )}
-            {/* {inRange && <Dialog
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="alert-dialog-title"
-                aria-describedby="alert-dialog-description"
-            >
-                <DialogTitle id="alert-dialog-title">
-                    {"Use Google's location service?"}
-                </DialogTitle>
-                <DialogContent>
-                    <DialogContentText id="alert-dialog-description">
-                        Let Google help apps determine location. This means sending anonymous
-                        location data to Google, even when no apps are running.
-                    </DialogContentText>
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleClose}>Disagree</Button>
-                    <Button onClick={handleClose} autoFocus>
-                        Agree
-                    </Button>
-                </DialogActions>
-            </Dialog>} */}
         </Container>
     )
 
