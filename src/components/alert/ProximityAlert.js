@@ -7,48 +7,29 @@ import Button from '@mui/material/Button';
 import { Container } from "@mui/system"
 import React, { useEffect, useState } from 'react';
 
-function CloseAlert() {
-    const [longitude, setLongitude] = useState(0)
-    const [latitude, setLatitude] = useState(0)
+function ProximityAlert(props) {
     const [inRange, setInRange] = useState(false)
-    const [open, setOpen] = useState(false)
-    let POIArray = [
-        13.0225,
-        14.0225,
-        15.0225
-    ]
+    const [longitude, setLongitude] = useState()
 
-    function closeToPOI() {
-        const found = POIArray.find(POI => longitude >= POI - 0.0002 && longitude <= POI + 0.0002)
-        console.log(POIArray)
-        if (found) {
-            setInRange(true)
-            setOpen(true);
+    useEffect(() => {
+        setLongitude(props.location.longitude)
+        function updateLocation() {
+            if(longitude <= 13.0226934 && longitude >= 13.02267) {
+                console.log('I RUN')
+                setInRange(true)
+            }
         }
-    }
-
-    const handleClose = () => {
-        const index = POIArray.indexOf(found)
-        POIArray.splice(index, 1)
-        setOpen(false);
-    };
-
-    useEffect(() => {
-        closeToPOI()
-    }, [longitude])
-
-    useEffect(() => {
-        navigator.geolocation.watchPosition(position => {
-            console.log(position)
-            console.log(POIArray)
-            setLongitude(position.coords.longitude)
-            setLatitude(position.coords.latitude)
-        })
-    })
+        updateLocation()
+    }, [props.location])
 
     return (
         <Container>
-            {inRange && <Dialog
+            <p>Long: {longitude}</p>
+            <p>Yeah?</p>
+            {inRange && (
+                <p>YES</p>
+            )}
+            {/* {inRange && <Dialog
                 open={open}
                 onClose={handleClose}
                 aria-labelledby="alert-dialog-title"
@@ -69,10 +50,10 @@ function CloseAlert() {
                         Agree
                     </Button>
                 </DialogActions>
-            </Dialog>}
+            </Dialog>} */}
         </Container>
     )
 
 }
 
-export default CloseAlert
+export default ProximityAlert
