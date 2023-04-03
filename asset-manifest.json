@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/treasure-hunt/static/js/main.1a24635e.js",
+    "main.js": "/treasure-hunt/static/js/main.2f33c989.js",
+    "static/media/House.jpg": "/treasure-hunt/static/media/House.50aa354c8ec1305c082e.jpg",
     "index.html": "/treasure-hunt/index.html",
-    "main.1a24635e.js.map": "/treasure-hunt/static/js/main.1a24635e.js.map"
+    "main.2f33c989.js.map": "/treasure-hunt/static/js/main.2f33c989.js.map"
   },
   "entrypoints": [
-    "static/js/main.1a24635e.js"
+    "static/js/main.2f33c989.js"
   ]
 }
