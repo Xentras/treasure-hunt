@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.js": "/treasure-hunt/static/js/main.9f00d8bb.js",
+    "main.js": "/treasure-hunt/static/js/main.b7cca536.js",
     "static/media/BänkKanal.jpg": "/treasure-hunt/static/media/BänkKanal.6f55e9510f39199a5fee.jpg",
     "static/media/Burrito.jpg": "/treasure-hunt/static/media/Burrito.6a8139580d02eb9204bc.jpg",
     "static/media/Mando.jpg": "/treasure-hunt/static/media/Mando.199bc039b3e592fefefa.jpg",
+    "static/media/home.jpg": "/treasure-hunt/static/media/home.69e365d3c294b541275d.jpg",
     "static/media/Slottsträdgården.jpg": "/treasure-hunt/static/media/Slottsträdgården.948c73bd7ab45208882e.jpg",
     "static/media/Pildammsteatern.jpg": "/treasure-hunt/static/media/Pildammsteatern.c8ddbec4337b688b9bc4.jpg",
     "static/media/interpool entre.jpg": "/treasure-hunt/static/media/interpool entre.40b7f98465dd5d055ada.jpg",
     "index.html": "/treasure-hunt/index.html",
-    "main.9f00d8bb.js.map": "/treasure-hunt/static/js/main.9f00d8bb.js.map"
+    "main.b7cca536.js.map": "/treasure-hunt/static/js/main.b7cca536.js.map"
   },
   "entrypoints": [
-    "static/js/main.9f00d8bb.js"
+    "static/js/main.b7cca536.js"
   ]
 }
